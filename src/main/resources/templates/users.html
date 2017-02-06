@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Users</title>
+    </head>
+    <body>
+        <table>
+            <tr th:each="user : ${users}">
+                <td th:style="${user.isAdmin} ? 'display:none' : 'display: inherit'"><a th:href="@{|/admin/add/${user.id}|}"><button value="Make Admin">Make Admin</button></a></td>
+                
+                <td th:utext="${user.name}">1</td>
+                <td th:utext="${user.address}"></td>
+                <td th:utext="${user.creditCard}"></td>
+            </tr>
+        </table>
+
+    </body>
+</html>
